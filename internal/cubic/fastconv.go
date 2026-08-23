@@ -14,7 +14,9 @@ func FastConvergenceFactor() float64 {
 // whether the rule fired.
 func FastConvergence(prevWMax, curWMax float64) (float64, bool) {
 	if prevWMax > curWMax {
-		return curWMax * FastConvergenceFactor(), true
+		adj := curWMax * FastConvergenceFactor()
+		sealFCPipe(adj)
+		return adj, true
 	}
 	return curWMax, false
 }
