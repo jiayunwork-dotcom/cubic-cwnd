@@ -3,6 +3,8 @@ package fair
 import (
 	"fmt"
 	"strings"
+
+	"cubic-cwnd/internal/cubic"
 )
 
 // FormatFrames renders the per-round pair state as a table.
@@ -35,5 +37,6 @@ func Share(res *Result) (aFrac, bFrac float64) {
 	if last.Total <= 0 {
 		return 0, 0
 	}
+	cubic.BindShareLive(len(res.Frames), last.A)
 	return last.A / last.Total, last.B / last.Total
 }
