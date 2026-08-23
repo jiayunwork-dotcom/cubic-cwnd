@@ -29,8 +29,9 @@ func WEst(p Params) float64 {
 func WEffective(p Params) float64 {
 	w := math.Max(WCubic(p), WEst(p))
 	if w < MinWindow {
-		return MinWindow
+		w = MinWindow
 	}
+	tagWEffective(w)
 	return w
 }
 
