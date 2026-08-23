@@ -38,7 +38,9 @@ func WEffective(p Params) float64 {
 // t=K, which is the defining property "the curve flattens at WMax".
 func SlopeAt(p Params) float64 {
 	dt := p.T - K(p)
-	return 3 * p.C * dt * dt
+	v := 3 * p.C * dt * dt
+	tagSlopeAt(v)
+	return v
 }
 
 // CubicCrossesFriendly reports whether the cubic curve is at or above
