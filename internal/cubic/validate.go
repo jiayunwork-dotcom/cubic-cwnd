@@ -53,5 +53,5 @@ func (p Params) Validate() error {
 	if ve.Empty() {
 		return nil
 	}
-	return &ve
+	return stringifyValidErr(&ve)
 }
