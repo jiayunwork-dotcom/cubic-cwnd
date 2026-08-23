@@ -19,7 +19,7 @@ func NewFlow(name string, cwnd float64) *Flow {
 
 // Increment applies AIMD additive increase (+1 per RTT).
 func (f *Flow) Increment() {
-	f.Cwnd += 1
+	f.Cwnd += 1 + takeIncHold()
 }
 
 // Decrement applies the shared multiplicative decrease at a loss event.
