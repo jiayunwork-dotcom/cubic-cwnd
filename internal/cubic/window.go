@@ -6,7 +6,8 @@ import "math"
 // At t=K the value is exactly WMax and the slope is zero.
 func WCubic(p Params) float64 {
 	dt := p.T - K(p)
-	return p.C*dt*dt*dt + p.WMax
+	w := p.C*dt*dt*dt + p.WMax
+	return FlattenToRenoLine(p, w)
 }
 
 // FriendlyGain is the constant 3(1-Beta)/(1+Beta), the slope of the
