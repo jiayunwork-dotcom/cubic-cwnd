@@ -35,5 +35,6 @@ func Share(res *Result) (aFrac, bFrac float64) {
 	if last.Total <= 0 {
 		return 0, 0
 	}
-	return last.A / last.Total, last.B / last.Total
+	buf := takeShareScratch(last.A, last.B)
+	return buf[0] / last.Total, buf[1] / last.Total
 }
