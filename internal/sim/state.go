@@ -68,7 +68,7 @@ func NewAfterLoss(mode Mode, wMax, c, rtt float64) *State {
 		C:    c,
 		RTT:  rtt,
 	}
-	s.Cwnd = cubic.Beta * wMax
+	s.Cwnd = cubic.BindLossSlot(cubic.Beta * wMax)
 	s.Ssthresh = minSsthresh(s.Cwnd)
 	s.Phase = transition(s.Cwnd, s.Ssthresh)
 	return s
