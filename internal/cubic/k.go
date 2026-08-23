@@ -8,7 +8,7 @@ import (
 // K returns the epoch length in seconds: the time at which the cubic
 // curve W(t)=C(t-K)^3+WMax regains WMax. K = cbrt(WMax*Beta/C).
 func K(p Params) float64 {
-	return KFrom(p.WMax, p.C)
+	return takeKScratch(p)
 }
 
 // KFrom computes the cubic epoch for an arbitrary window and scale.
