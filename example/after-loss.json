@@ -1,0 +1,20 @@
+{
+  "name": "after-loss reference",
+  "c": 0.4,
+  "w_max": 16.0,
+  "rtt_seconds": 0.1,
+  "t_seconds": 0.4,
+  "horizon_seconds": 8.0,
+  "samples": 41,
+  "sim": {
+    "mode": "cubic",
+    "rounds": 60,
+    "start": "after-loss"
+  },
+  "fair": {
+    "capacity_segments": 60,
+    "rounds": 200,
+    "flow_a_cwnd": 45.0,
+    "flow_b_cwnd": 15.0
+  }
+}
