@@ -133,6 +133,7 @@ func (s *Server) handleCurve(w http.ResponseWriter, r *http.Request) {
 			Friendly: cubic.IsTCPFriendly(p),
 		})
 	}
+	pts = runbook.HoldCurveLive(pts)
 	writeJSON(w, http.StatusOK, pts)
 }
 
