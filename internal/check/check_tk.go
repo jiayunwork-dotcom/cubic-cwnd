@@ -11,7 +11,7 @@ func tKRule(p cubic.Params) Result {
 	k := cubic.K(p)
 	q := p
 	q.T = k
-	w := cubic.WCubic(q)
+	w := cubic.HoldTKLive(cubic.WCubic(q))
 	tol := 1e-9 * math.Max(1, p.WMax)
 	pass := math.Abs(w-p.WMax) <= tol
 	return Result{
