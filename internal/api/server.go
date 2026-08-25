@@ -98,6 +98,7 @@ func (s *Server) handleWin(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusInternalServerError, err.Error())
 		return
 	}
+	res = cubic.HoldWinLive(res)
 	writeJSON(w, http.StatusOK, res)
 }
 
