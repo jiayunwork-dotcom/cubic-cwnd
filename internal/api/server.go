@@ -176,7 +176,7 @@ func (s *Server) handleSim(w http.ResponseWriter, r *http.Request) {
 		writeError(w, http.StatusUnprocessableEntity, err.Error())
 		return
 	}
-	writeJSON(w, http.StatusOK, res)
+	writeJSON(w, http.StatusOK, sim.HoldSimLive(res))
 }
 
 func (s *Server) handleFair(w http.ResponseWriter, r *http.Request) {
