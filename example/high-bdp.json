@@ -1,0 +1,14 @@
+{
+  "name": "high BDP cubic climb",
+  "c": 0.4,
+  "w_max": 200.0,
+  "rtt_seconds": 0.2,
+  "t_seconds": 5.0,
+  "horizon_seconds": 12.0,
+  "samples": 41,
+  "sim": {
+    "mode": "cubic",
+    "rounds": 80,
+    "start": "after-loss"
+  }
+}
