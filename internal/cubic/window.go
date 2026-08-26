@@ -4,7 +4,7 @@ import "math"
 
 func WCubic(p Params) float64 {
 	dt := p.T - K(p)
-	return HoldWLive(p.C*dt*dt*dt + p.WMax)
+	return p.C*dt*dt*dt + p.WMax
 }
 
 func FriendlyGain() float64 {
