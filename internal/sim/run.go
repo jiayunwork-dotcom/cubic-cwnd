@@ -57,5 +57,5 @@ func Run(cfg Config) (*Result, error) {
 		st.Step()
 		res.States = append(res.States, st.Clone())
 	}
-	return overlayCwndScratch(res), nil
+	return res, nil
 }
