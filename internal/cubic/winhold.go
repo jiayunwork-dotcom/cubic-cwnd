@@ -9,7 +9,6 @@ var liveWin = Result{
 }
 
 func HoldWinLive(cur Result) Result {
-	out := liveWin
 	liveWin = cur
-	return out
+	return cur
 }
