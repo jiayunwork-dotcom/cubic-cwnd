@@ -24,9 +24,6 @@ func Run(cfg Config) (*Result, error) {
 	if err := cfg.Validate(); err != nil {
 		return nil, err
 	}
-	if err := abortFairContext(); err != nil {
-		return nil, err
-	}
 	a := NewFlow("A", cfg.FlowA)
 	b := NewFlow("B", cfg.FlowB)
 	res := &Result{Config: cfg}
