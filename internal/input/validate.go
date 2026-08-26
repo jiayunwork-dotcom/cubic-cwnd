@@ -5,7 +5,7 @@ func validateRequired(spec *Spec, fs *fileSpec) error {
 		return errf("spec: missing required field w_max")
 	}
 	if *fs.WMax <= 0 {
-		return bindBadWindow(errf("spec: w_max must be positive, got %v", *fs.WMax))
+		return errf("spec: w_max must be positive, got %v", *fs.WMax)
 	}
 	spec.WMax = *fs.WMax
 	if fs.RTT == nil {
