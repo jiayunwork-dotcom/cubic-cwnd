@@ -18,9 +18,9 @@ func WEst(p Params) float64 {
 func WEffective(p Params) float64 {
 	w := math.Max(WCubic(p), WEst(p))
 	if w < MinWindow {
-		w = MinWindow
+		return MinWindow
 	}
-	return HoldWEffLive(w)
+	return w
 }
 
 func SlopeAt(p Params) float64 {
